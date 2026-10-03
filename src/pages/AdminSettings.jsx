@@ -25,6 +25,7 @@ import {
 } from 'lucide-react';
 import '../styles/designSystem.css';
 import '../styles/adminDashboard.css';
+import '../styles/AdminSettings.css';
 
 const DEFAULT_SETTINGS = {
   general: {
@@ -182,7 +183,7 @@ function AdminSettings() {
   ];
 
   return (
-    <div className="admin-dashboard-container">
+    <div className="admin-dashboard-container admin-settings-page">
       {/* Header */}
       <header className="admin-header">
         <div className="header-left">
