@@ -451,67 +451,6 @@
   color: var(--color-text-tertiary);
 }
 
-/* Charts Section */
-.charts-section {
-  margin-bottom: var(--spacing-8);
-}
-
-.charts-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-6);
-}
-
-.chart-card {
-  background: var(--color-background);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-6);
-  box-shadow: var(--shadow-sm);
-}
-
-.chart-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: var(--spacing-6);
-}
-
-.chart-header h3 {
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text-primary);
-  margin: 0;
-}
-
-.chart-filter {
-  width: auto;
-  padding: var(--spacing-2) var(--spacing-3);
-  font-size: var(--font-size-xs);
-  min-width: 120px;
-}
-
-.chart-placeholder {
-  height: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: var(--color-surface);
-  border-radius: var(--radius-lg);
-  color: var(--color-text-tertiary);
-  gap: var(--spacing-3);
-}
-
-.chart-placeholder svg {
-  opacity: 0.5;
-}
-
-.chart-placeholder p {
-  font-size: var(--font-size-sm);
-  margin-bottom: 0;
-}
-
 /* Incidents Section */
 .incidents-section {
   background: var(--color-background);
@@ -643,23 +582,9 @@
   }
 }
 
-@media (max-width: 1200px) {
-  .charts-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .chart-card:last-child {
-    grid-column: 1 / -1;
-  }
-}
-
 @media (max-width: 1024px) {
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .charts-grid {
-    grid-template-columns: 1fr;
   }
 
   .section-header {
