@@ -27,7 +27,6 @@ import {
 } from 'lucide-react';
 import '../styles/designSystem.css';
 import '../styles/adminDashboard.css';
-import '../styles/AdminUsers.css';
 
 function AdminUsers() {
   const navigate = useNavigate();
@@ -417,7 +416,7 @@ function AdminUsers() {
   };
 
   return (
-    <div className="admin-dashboard-container admin-users-page">
+    <div className="admin-dashboard-container">
       {/* Header */}
       <header className="admin-header">
         <div className="header-left">
