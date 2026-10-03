@@ -21,7 +21,6 @@ import {
 } from 'lucide-react';
 import '../styles/designSystem.css';
 import '../styles/adminDashboard.css';
-import '../styles/AdminOverview.css';
 
 function AdminOverview() {
   const navigate = useNavigate();
