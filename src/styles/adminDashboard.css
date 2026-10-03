@@ -1407,6 +1407,8 @@
   color: var(--color-text-primary);
   margin: 0;
 }
+  color: var(--color-text-tertiary);
+}
 
 .empty-state h3 {
   margin: 0 0 var(--spacing-2) 0;
@@ -1837,19 +1839,5 @@
 
   .settings-content {
     padding: var(--spacing-4);
-  }
-
-  .users-section {
-    padding: var(--spacing-4);
-  }
-
-  .users-table th,
-  .users-table td {
-    padding: var(--spacing-3) var(--spacing-4);
-  }
-
-  .filter-controls {
-    flex-direction: column;
-    align-items: stretch;
   }
 }
