@@ -1,0 +1,177 @@
+/* Administrator screens and data tables: toolbar, tables, tables-as-cards on small screens, dialogs. */
+.toolbar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+  align-items: end;
+}
+.toolbar > div {
+  flex: 1 1 150px;
+}
+.toolbar label {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+.table-wrap {
+  position: relative;
+  overflow-x: auto;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 680px;
+}
+th,
+td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+th {
+  overflow-wrap: normal;
+  font-size: 0.85rem;
+  color: var(--mute);
+  background: #f8fafc;
+}
+tr:last-child td {
+  border-bottom: 0;
+}
+tbody tr:hover {
+  background: #f8fafc;
+}
+td select {
+  min-width: 9.5rem;
+}
+td .btn {
+  white-space: nowrap;
+}
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+/* ---------- tables become labelled cards (tablet and phone) ---------- */
+/* ---------- tables become labelled cards (tablet and phone) ---------- */
+@media (max-width: 1100px) {
+  .table-wrap:has(.stack) {
+    overflow: visible;
+    background: none;
+    border: 0;
+  }
+  table.stack,
+  table.stack tbody,
+  table.stack tr,
+  table.stack td {
+    display: block;
+    min-width: 0;
+    width: 100%;
+  }
+  table.stack thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+  table.stack tr {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    padding: 6px 14px;
+    margin-bottom: 12px;
+  }
+  table.stack tbody tr:hover {
+    background: var(--card);
+  }
+  table.stack td {
+    display: grid;
+    grid-template-columns: minmax(96px, 34%) minmax(0, 1fr);
+    gap: 4px 12px;
+    align-items: center;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  table.stack td:last-child {
+    border-bottom: 0;
+  }
+  table.stack td::before {
+    content: attr(data-label);
+    color: var(--mute);
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+  table.stack td > select {
+    min-width: 0;
+  }
+  table.stack td > .badge {
+    justify-self: start;
+  }
+}
+@media (max-width: 600px) {
+  .toolbar > div {
+    flex: 1 1 100%;
+  }
+  .toolbar .btn {
+    width: 100%;
+  }
+  .modal-actions .btn {
+    flex: 1 1 140px;
+  }
+}
+
+/* ---------- reporter role badge and row actions ---------- */
+.badge.role {
+  margin-left: 8px;
+  font-size: 0.75rem;
+  text-transform: capitalize;
+  vertical-align: middle;
+}
+.role-student {
+  background: #e0f2fe;
+  color: #075985;
+}
+.role-staff {
+  background: #ede9fe;
+  color: #5b21b6;
+}
+.row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* All incidents: reports uploaded by each user */
+.uploader-summary {
+  padding: 12px 16px;
+  margin-bottom: 14px;
+}
+.uploader-summary summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.uploader-summary ul {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+.uploader-summary li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--line);
+}
+.uploader-summary li:last-child {
+  border-bottom: 0;
+}
